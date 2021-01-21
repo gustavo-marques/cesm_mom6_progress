@@ -28,7 +28,7 @@ def expand(a):
 def yzplot(field, y=None, z=None, ylabel=None, yunits=None, zlabel=None, zunits=None,
   splitscale=None, title='', suptitle='', clim=None, colormap=None, extend=None, centerlabels=False,
   nbins=None, landcolor=[.5,.5,.5], show_stats=2, aspect=[16,9], resolution=576, axis=None,
-  ignore=None, debug=False, cbar=True):
+  ignore=None, debug=False, cbar=True, cbar_hor=False, cbar_label=''):
       # Create coordinates if not provided
   ylabel, yunits, zlabel, zunits = createYZlabels(y, z, ylabel, yunits, zlabel, zunits)
   if debug: print('y,z label/units=',ylabel,yunits,zlabel,zunits)
@@ -55,7 +55,13 @@ def yzplot(field, y=None, z=None, ylabel=None, yunits=None, zlabel=None, zunits=
 
   cs = axis.pcolormesh(yCoord, zCoord, field2, cmap=cmap, norm=norm)
   if cbar:
-    cb = plt.colorbar(cs,ax=axis, fraction=.08, pad=0.02, extend=extend)
+    if cbar_hor:  
+      cb = plt.colorbar(cs,ax=axis, fraction=.08, pad=0.02, extend=extend, orientation='horizontal')
+    else:
+      cb = plt.colorbar(cs,ax=axis, fraction=.08, pad=0.02, extend=extend)
+    if len(cbar_label)>0:
+      cb.set_label(cbar_label)
+    
   if centerlabels and len(clim)>2: cb.set_ticks(  0.5*(clim[:-1]+clim[1:]) )
   axis.set_facecolor(landcolor)
   if splitscale is not None:

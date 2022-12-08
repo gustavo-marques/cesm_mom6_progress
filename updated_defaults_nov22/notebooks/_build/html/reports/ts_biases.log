@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/client.py", line 1093, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/glade/work/gmarques/miniconda/envs/dev2/lib/python3.9/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# change k indice to see bias at other depths
+levels=[0,1,2,5,10,15,20,25]
+ds_pop_t = pop_add_cyclic(xr.open_dataset('/glade/scratch/gmarques/g210.GIAF_JRA.v13.gx1v7.01_thetao_time_mean.nc').rename({'yh': 'nlat',
+                    'xh':'nlon', 'z_l':'z_t'}).assign_coords({'TLAT': pop_grid.TLAT, 'TLONG':pop_grid.TLONG}).drop('nlat').drop('nlon'))
+tlim=[5,7.5,7.5,5,5,5]
+
+for k,t in zip(levels,tlim):
+  for path, case, i in zip(ocn_path, casename, range(len(casename))):
+    ds_mom_t = xr.open_dataset(path+case+'_thetao_time_mean.nc')
+    kpop =  find_nearest(phc_salt_pop.depth.values,phc_temp_mom.depth[k].values) 
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(20,5))
+    ax1 = ax.flatten()
+    temp_mom = np.ma.masked_invalid(ds_mom_t.thetao[k,:].values)
+    temp_mom_obs = np.ma.masked_invalid(phc_temp_mom['TEMP'][k,:].values)
+    temp_pop = ds_pop_t.thetao[kpop,:]
+    temp_pop_obs = phc_temp_pop.thetao[kpop,:]
+    pop_diff = np.ma.masked_invalid((temp_pop-temp_pop_obs).values)
+  
+    plt.suptitle('Temperature bias [C] at level {} or depth = {} m ({}), {} m (pop)'.format(k, 
+               phc_temp_mom.depth[k].values, label[i], phc_temp_pop.depth[kpop].values))
+    xyplot(temp_mom-temp_mom_obs, grd.geolon, grd.geolat, grd.area_t, title=str(label[i]+' - obs'), axis=ax1[0], 
+         clim=(-t,t), nbins=100, colormap=plt.cm.bwr, centerlabels=True)
+    xyplot(pop_diff, pop_grid_o.TLONG.values, pop_grid_o.TLAT.values, pop_grid_o.TAREA.values,
+         title=str('pop - obs'), axis=ax1[1], 
+         clim=(-t,t), nbins=100, colormap=plt.cm.bwr, centerlabels=True)
+    ax1[1].set_xlim(-220,140)
+    plt.subplots_adjust(top = 0.8)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/glade/scratch/gmarques/ipykernel_70027/4264151899.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     19[0m     plt.suptitle('Temperature bias [C] at level {} or depth = {} m ({}), {} m (pop)'.format(k, 
+[1;32m     20[0m                phc_temp_mom.depth[k].values, label[i], phc_temp_pop.depth[kpop].values))
+[0;32m---> 21[0;31m     xyplot(temp_mom-temp_mom_obs, grd.geolon, grd.geolat, grd.area_t, title=str(label[i]+' - obs'), axis=ax1[0], 
+[0m[1;32m     22[0m          clim=(-t,t), nbins=100, colormap=plt.cm.bwr, centerlabels=True)
+[1;32m     23[0m     xyplot(pop_diff, pop_grid_o.TLONG.values, pop_grid_o.TLAT.values, pop_grid_o.TAREA.values,
+
+[0;31mAttributeError[0m: type object 'MOM6_grd' has no attribute 'area_t'
+AttributeError: type object 'MOM6_grd' has no attribute 'area_t'
+

@@ -1,0 +1,13 @@
+Avg:
+  end_date: '0011-01-01'
+  start_date: '0001-01-01'
+Case1:
+  CASEROOT: /glade/work/gmarques/cesm.cases/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.dev_ncar/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.dev_ncar/ncfiles/
+  SNAME: ctrl
+Case2:
+  CASEROOT: /glade/work/gmarques/cesm.cases/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.new_defaults_nov22/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/G/gmom.e23.GJRAv4.TL319_t061_zstar_N65.new_defaults_nov22/ncfiles/
+  SNAME: new_defaults_nov22

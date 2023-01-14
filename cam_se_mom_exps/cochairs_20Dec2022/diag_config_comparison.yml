@@ -1,0 +1,23 @@
+Avg:
+  end_date: '0217-01-01'
+  start_date: '0001-01-01'
+Case1:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026c/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026c/ncfiles/
+  SNAME: case026c
+Case2:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice6.026e/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice6.026e/ncfiles/
+  SNAME: case026e
+Case3:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026f/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026f/ncfiles/
+  SNAME: case026f
+Case4:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026g/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.026g/ncfiles/
+  SNAME: case026g

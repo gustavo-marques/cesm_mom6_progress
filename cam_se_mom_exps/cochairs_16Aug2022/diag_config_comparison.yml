@@ -1,0 +1,33 @@
+Avg:
+  end_date: '0035-01-01'
+  start_date: '0001-01-01'
+Case1:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_c.B1850WscMOM.ne30_L58_t061.009/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_c.B1850WscMOM.ne30_L58_t061.009/ncfiles/
+  SNAME: case009
+Case2:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850MOM.f09_L32_t061.cam6_cice5.016/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850MOM.f09_L32_t061.cam6_cice5.016/ncfiles/
+  SNAME: case016
+Case3:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.cam6_cice5.018b/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.cam6_cice5.018b/ncfiles/
+  SNAME: case018b
+Case4:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.camdev_cice5.020/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.camdev_cice5.020/ncfiles/
+  SNAME: case020
+Case5:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.camdev_cice5.021/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850MOM.ne30_L32_t061.camdev_cice5.021/ncfiles/
+  SNAME: case021
+Case6:
+  CASEROOT: /glade/p/cesmdata/cseg/runs/cesm2_0/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.023/
+  CIMEROOT: /glade/work/gmarques/cesm.sandboxes/cesm2_3_beta08/cime/
+  OCN_DIAG_ROOT: /glade/u/home/gmarques/Notebooks/CESM_MOM6/B/b.cesm3_cam058_mom_e.B1850WscMOM.ne30_L58_t061.camdev_cice5.023/ncfiles/
+  SNAME: case023
